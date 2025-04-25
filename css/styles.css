@@ -20,18 +20,23 @@ nav {
     justify-content: flex-end;
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: -100%;
-    transition: right 0.2s ease-in-out;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 0.2s ease-in-out;
     z-index: 10000;
     padding: 1rem;
+}
+.no-scroll {
+    overflow: hidden;
+    height: 100vh;
 }
 .full-size-nav {
     display: none;
 }
 .slideout-menu.active {
-    right: 0;
+    transform: translateX(0);
 }
 .close-button {
     margin-right: -12px;
@@ -296,7 +301,4 @@ footer {
 }
 .alt-contact a:hover, .alt-contact a:focus {
     text-decoration: underline;
-}
-html, body {
-    overflow-y: auto !important;
 }
